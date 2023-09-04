@@ -1,0 +1,9 @@
+.Main {
+  height: 688px;
+  overflow-y: scroll;
+}
+
+.Main__item {
+  height: 166px;
+  margin: 8px 0;
+}

@@ -1,12 +1,34 @@
-import React, { ReactElement } from "react";
-import { BasicProps, ApiObject } from "../../utils/types";
+import React, { ReactElement, useState, useEffect } from "react";
+import { MainProps, ApiObject } from "../../utils/types";
 import "./Main.css";
 
-function Main(props: BasicProps): ReactElement {
+function Main(props: MainProps): ReactElement {
+  const [scrollTop, setScrollTop] = useState(0);
+
+  useEffect(() => {
+    const startDate =
+      scrollTop < (props.data as ApiObject[]).length
+        ? Date.parse((props.data as ApiObject[])[scrollTop].startDate as string)
+        : (props.data as ApiObject[]).length;
+
+    if (isNaN(props.currentDate) || props.currentDate !== startDate) {
+      props.setCurrentDate(startDate);
+    }
+  });
+
   return (
-    <>
-      <h2>{(props.data as ApiObject[]).length}</h2>
-    </>
+    <section
+      className="Main"
+      onScroll={(e) => {
+        setScrollTop(Math.floor((e.target as HTMLElement).scrollTop / 182));
+      }}
+    >
+      {(props.data as ApiObject[]).map((i) => (
+        <div key={i.id as string} className="Main__item">
+          <h2>{i.id}</h2>
+        </div>
+      ))}
+    </section>
   );
 }
 

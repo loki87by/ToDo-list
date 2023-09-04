@@ -1,7 +1,7 @@
-// import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 export interface ApiObject {
-  [key: string]: string | number | boolean;
+  [key: string]: string | number | boolean | Date;
 }
 
 export interface AppState {
@@ -19,9 +19,11 @@ export interface BasicProps {
 }
 
 export interface HeaderProps {
-  data: ApiObject[];
+  currentDay: string;
+  items: number;
 }
 
-export interface MainProps {
-  data: ApiObject[];
+export interface MainProps extends BasicProps {
+  currentDate: number;
+  setCurrentDate: Dispatch<SetStateAction<number>>
 }
