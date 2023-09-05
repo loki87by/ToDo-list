@@ -6,8 +6,8 @@
 }
 
 .Main::-webkit-scrollbar {
-      width: 0;
-      height: 0;
+  width: 0;
+  height: 0;
 }
 
 .Main__item {
@@ -16,6 +16,7 @@
   margin: 8px 0;
   padding: 4px;
   border-radius: 7px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background: #f4f8ff;
 }

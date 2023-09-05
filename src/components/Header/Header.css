@@ -1,9 +1,16 @@
 .Header {
   height: 20px;
   padding: 0px 4px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -16,8 +23,14 @@
 }
 
 .Header__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -27,8 +40,14 @@
   padding: 4px;
   border: none;
   border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   background: #d9d9d9;
 }
@@ -39,12 +58,15 @@
 }
 
 .Header__items-text {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   height: 20px;
   padding: 1px 6px 2px 6px;
   margin-left: 8px;
   border: 1px solid #7b8aab;
   border-radius: 4px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 12px;
   font-weight: 600;

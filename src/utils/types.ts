@@ -5,7 +5,7 @@ export interface ApiObject {
 }
 
 export interface DateOptions {
-  [key: string]: string
+  [key: string]: string;
 }
 
 export interface AppState {
@@ -29,7 +29,7 @@ export interface HeaderProps {
 
 export interface MainProps extends BasicProps {
   currentDate: number;
-  setCurrentDate: Dispatch<SetStateAction<number>>
+  setCurrentDate: Dispatch<SetStateAction<number>>;
 }
 
 export interface ItemProps {
