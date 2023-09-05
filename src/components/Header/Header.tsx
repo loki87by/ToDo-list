@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { HeaderProps } from "../../utils/types";
 import add from "../../assets/add.png";
-import * as styles from "./Header.css";
+import * as styles from "./Header.scss";
 
 function Header(props: HeaderProps): ReactElement {
   return (

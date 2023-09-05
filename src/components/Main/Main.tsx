@@ -1,7 +1,7 @@
 import React, { ReactElement, useState, useEffect } from "react";
 import { MainProps, ApiObject } from "../../utils/types";
 import Item from "../Item/Item";
-import * as styles from "./Main.css";
+import * as styles from "./Main.scss";
 
 function Main(props: MainProps): ReactElement {
   const [scrollTop, setScrollTop] = useState(0);

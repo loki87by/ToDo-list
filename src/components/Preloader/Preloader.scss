@@ -1,0 +1,24 @@
+@import "../../_variables.scss";
+@import "../../_mixins.scss";
+
+.preloader {
+  @include equilateral(10vmin);
+  margin: auto;
+  border: 4px solid $main-color;
+  border-bottom-color: $back-color;
+  border-radius: 50%;
+  display: block;
+  @include animation(spin 0.75s infinite linear);
+}
+
+@-webkit-keyframes spin {
+  100% {
+    @include transform(rotate(30deg));
+  }
+}
+
+@keyframes spin {
+  100% {
+    @include transform(rotate(30deg));
+  }
+}

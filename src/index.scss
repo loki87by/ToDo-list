@@ -1,0 +1,24 @@
+@import "normalize";
+@import "variables";
+@import "templates";
+@import "mixins";
+
+html {
+  @extend %vertical-flex;
+  @include equilateral(100%);
+  overflow: hidden;
+  background-color: $back-color;
+}
+
+body {
+  width: 263px;
+  height: 716px;
+  margin: auto;
+  background-color: $back-color;
+}
+
+h3,
+h4,
+h5 {
+  margin: 0;
+}

@@ -9,7 +9,6 @@ export function OnLoadingData<T extends DataLoad>(
   return class extends React.Component<DataLoad & T> {
     static displayName = `onLoadingData(${Child.displayName || Child.name})`;
     render() {
-      console.log(this.props.isLoading);
       return this.props.isLoading ? (
         <div>
           <h1>Подождите, данные загружаются!</h1>

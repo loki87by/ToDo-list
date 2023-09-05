@@ -17,7 +17,6 @@ function App(): ReactElement {
     const apiUrl = "https://jsonplaceholder.typicode.com/todos";
     axios.get(apiUrl).then((resp) => {
       const data = dataUpdater(resp.data);
-      console.log(data);
       setAppState({
         loading: false,
         data: data,

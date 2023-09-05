@@ -2,7 +2,7 @@ import React, { ReactElement, useState, useEffect } from "react";
 import { BasicProps, ApiObject } from "../../utils/types";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
-import * as styles from "./Content.css";
+import * as styles from "./Content.scss";
 
 function Content(props: BasicProps): ReactElement {
   const [currentDate, setCurrentDate] = useState(NaN);

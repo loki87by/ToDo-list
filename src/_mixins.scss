@@ -1,0 +1,40 @@
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+@mixin animation($property) {
+  -webkit-animation: $property;
+  animation: $property;
+}
+
+@mixin user-select($property) {
+  -webkit-user-select: $property;
+  -moz-user-select: $property;
+  -ms-user-select: $property;
+  user-select: $property;
+}
+
+@mixin equilateral($property) {
+  width: $property;
+  height: $property;
+}
+
+@mixin box($property) {
+  -webkit-box-sizing: $property;
+  box-sizing: $property;
+}
+
+@mixin lines($property) {
+  -ms-line-clamp: $property;
+  -webkit-line-clamp: $property;
+  line-clamp: $property;
+}
+
+@mixin ellipsis($property) {
+  -ms-text-overflow: $property;
+  -o-text-overflow: $property;
+  text-overflow: $property;
+  overflow: hidden;
+}

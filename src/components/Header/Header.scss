@@ -1,0 +1,52 @@
+@import "../../_variables.scss";
+@import "../../_templates.scss";
+@import "../../_mixins.scss";
+
+.header {
+  height: 20px;
+  padding: 0px 4px;
+  @include box(border-box);
+  @extend %horizontal-flex-between;
+}
+
+.day {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: $secondary-color;
+}
+
+.items {
+  @extend %horizontal-flex-between;
+}
+
+.itemsButton {
+  @include equilateral(20px);
+  @extend %horizontal-flex;
+  padding: 4px;
+  border: none;
+  border-radius: 4px;
+  background: #d9d9d9;
+}
+
+.itemsImage {
+  @include equilateral(12px);
+}
+
+.itemsText {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 20px;
+  padding: 1px 6px 2px 6px;
+  margin-left: 8px;
+  border: 1px solid #7b8aab;
+  border-radius: 4px;
+  @include box(border-box);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: 0px;
+  color: $neuteral-color;
+}

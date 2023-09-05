@@ -40,7 +40,7 @@ const config: webpack.Configuration = {
         loader: "file-loader",
       },
       {
-        test: /\.css$/,
+        test: /\.s[ac]ss$/i,
         exclude: /node_modules/,
         use: [
           { loader: "style-loader" },
@@ -57,6 +57,7 @@ const config: webpack.Configuration = {
               modules: { localIdentName: "[name]__[local]___[hash:base64:5]" },
             },
           },
+          { loader: "sass-loader" },
         ],
       },
     ],

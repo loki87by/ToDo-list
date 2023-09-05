@@ -3,7 +3,7 @@ declare module "*.png" {
   export default content;
 }
 
-declare module '*.css' {
+declare module '*.scss' {
   interface IClassNames {
     [className: string]: string
   }

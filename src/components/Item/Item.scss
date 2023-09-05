@@ -1,0 +1,157 @@
+@import "../../_variables.scss";
+@import "../../_templates.scss";
+@import "../../_mixins.scss";
+
+.item {
+  @extend %vertical-flex;
+  @include box(border-box);
+  width: 100%;
+  height: 158px;
+  padding: 10px;
+  background-color: $back-color;
+}
+
+.title {
+  @extend %wraped-flex;
+  width: 100%;
+}
+
+.titleCheckbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.titleCheckbox + .titleText {
+  @include user-select(none);
+}
+
+.titleCheckbox + .titleText::before {
+  content: "";
+  display: inline-block;
+  @include equilateral(16px);
+  padding: 2px 0px 0px 0px;
+  margin-right: 8px;
+  border-radius: 4px;
+  border: 1px solid #aab7d4;
+  @include box(border-box);
+  background: #f8fafb;
+}
+
+.titleCheckbox:checked + .titleText::before {
+  @include box(border-box);
+  border: 5px;
+  background-color: #aab7d4;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.titleText {
+  display: -webkit-box;
+  display: box;
+  @include lines(3);
+  @include ellipsis(ellipsis);
+  word-wrap: break-word;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0px;
+  color: $primary-color;
+}
+
+.description {
+  @extend %vertical-flex;
+  width: 100%;
+  height: 43px;
+  margin: 8px 0;
+}
+
+.descriptionDates,
+.descriptionText {
+  width: 100%;
+  height: 19px;
+}
+
+.descriptionDates {
+  @extend %horizontal-flex-between;
+}
+
+.descriptionDate,
+.descriptionText {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0px;
+}
+
+.descriptionDate {
+  font-weight: 600;
+  color: $secondary-color;
+}
+
+.descriptionText {
+  font-weight: 400;
+  color: $neuteral-color;
+  white-space: nowrap;
+  @include ellipsis(ellipsis);
+}
+
+.titleSpan {
+  @include equilateral(-webkit-max-content);
+  @include equilateral(-moz-max-content);
+  @include equilateral(max-content);
+  padding-top: 2px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.descriptionAdditionaly {
+  width: 100%;
+  height: 24px;
+  @extend %horizontal-flex-between;
+}
+
+.descriptionTags {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 20px;
+  @extend %horizontal-flex-between;
+}
+
+.descriptionTag {
+  @include equilateral(-webkit-max-content);
+  @include equilateral(-moz-max-content);
+  @include equilateral(max-content);
+  padding: 1px 6px 2px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: 0px;
+}
+
+.descriptionTag:first-of-type {
+  border-radius: 4px;
+  margin-right: 8px;
+  background-color: #b233a6;
+  color: $back-color;
+}
+
+.descriptionTag:last-of-type {
+  border-radius: 4px 0px 0px 4px;
+  background-color: #ebeef6;
+  color: #616c82;
+}
+
+.descriptionArrow {
+  margin-left: -3px;
+}
+
+.descriptionAvatar {
+  @include equilateral(24px);
+  border-radius: 18px;
+}
