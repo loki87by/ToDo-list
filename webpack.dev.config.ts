@@ -6,6 +6,7 @@ import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import autoprefixer from "autoprefixer";
+import TypescriptPluginCssModules from "typescript-plugin-css-modules";
 
 interface Configuration extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration;
@@ -49,7 +50,13 @@ const config: Configuration = {
               esModule: false,
             },
           },
-          { loader: "css-loader", options: { importLoaders: 1 } },
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+              modules: { localIdentName: "[name]__[local]___[hash:base64:5]" },
+            },
+          },
         ],
       },
     ],
@@ -69,6 +76,7 @@ const config: Configuration = {
     }),
     new MiniCssExtractPlugin(),
     autoprefixer,
+    TypescriptPluginCssModules,
   ],
   devtool: "inline-source-map",
   devServer: {

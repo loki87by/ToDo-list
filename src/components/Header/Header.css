@@ -1,4 +1,4 @@
-.Header {
+.header {
   height: 20px;
   padding: 0px 4px;
   -webkit-box-sizing: border-box;
@@ -14,7 +14,7 @@
   justify-content: space-between;
 }
 
-.Header__day {
+.day {
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
@@ -22,7 +22,7 @@
   color: var(--secondary-color);
 }
 
-.Header__items {
+.items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,7 +34,7 @@
   justify-content: space-between;
 }
 
-.Header__items-button {
+.itemsButton {
   width: 20px;
   height: 20px;
   padding: 4px;
@@ -52,12 +52,12 @@
   background: #d9d9d9;
 }
 
-.Header__items-image {
+.itemsImage {
   width: 12px;
   height: 12px;
 }
 
-.Header__items-text {
+.itemsText {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;

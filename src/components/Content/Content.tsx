@@ -2,7 +2,7 @@ import React, { ReactElement, useState, useEffect } from "react";
 import { BasicProps, ApiObject } from "../../utils/types";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
-import "./Content.css";
+import * as styles from "./Content.css";
 
 function Content(props: BasicProps): ReactElement {
   const [currentDate, setCurrentDate] = useState(NaN);
@@ -39,7 +39,7 @@ function Content(props: BasicProps): ReactElement {
   }, [props.data, currentDate]);
 
   return (
-    <section className="Content">
+    <section className={ styles.content }>
       <Header currentDay={currentDateStringify} items={currentDateItems} />
       <Main
         data={props.data}

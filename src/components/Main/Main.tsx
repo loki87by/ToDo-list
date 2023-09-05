@@ -1,7 +1,7 @@
 import React, { ReactElement, useState, useEffect } from "react";
 import { MainProps, ApiObject } from "../../utils/types";
 import Item from "../Item/Item";
-import "./Main.css";
+import * as styles from "./Main.css";
 
 function Main(props: MainProps): ReactElement {
   const [scrollTop, setScrollTop] = useState(0);
@@ -19,13 +19,13 @@ function Main(props: MainProps): ReactElement {
 
   return (
     <section
-      className="Main"
+      className={styles.main}
       onScroll={(e) => {
         setScrollTop(Math.floor((e.target as HTMLElement).scrollTop / 182));
       }}
     >
       {(props.data as ApiObject[]).map((i) => (
-        <div key={i.id as string} className="Main__item">
+        <div key={i.id as string} className={styles.item}>
           <Item data={i} />
         </div>
       ))}

@@ -2,9 +2,10 @@ import path from "path";
 import webpack from "webpack";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import HtmlWebpackPlugin from "html-webpack-plugin";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import TypescriptPluginCssModules from "typescript-plugin-css-modules";
 import autoprefixer from "autoprefixer";
 
 const config: webpack.Configuration = {
@@ -49,7 +50,13 @@ const config: webpack.Configuration = {
               esModule: false,
             },
           },
-          { loader: "css-loader", options: { importLoaders: 1 } },
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+              modules: { localIdentName: "[name]__[local]___[hash:base64:5]" },
+            },
+          },
         ],
       },
     ],
@@ -65,10 +72,12 @@ const config: webpack.Configuration = {
       extensions: ["js", "jsx", "ts", "tsx"],
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'public', 'index.html')}),
+      template: path.join(__dirname, "public", "index.html"),
+    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
     autoprefixer,
+    TypescriptPluginCssModules
   ],
 };
 

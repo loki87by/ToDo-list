@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
-import "./Preloader.css";
+import * as styles from "./Preloader.css";
 
 function Preloader(): ReactElement {
-  return <i className="Preloader"></i>;
+  return <i className={styles.preloader}></i>;
 }
 
 export default Preloader;
