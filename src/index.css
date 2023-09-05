@@ -3,6 +3,10 @@
 html {
   --back-color: #fff;
   --main-color: #000;
+  --primary-color: #3d8fec;
+  --secondary-color: #50b810;
+  --neuteral-color: #555555;
+
   width: 100%;
   height: 100%;
   display: flex;
@@ -20,6 +24,7 @@ body {
 }
 
 h3,
-h4 {
+h4,
+h5 {
   margin: 0;
 }

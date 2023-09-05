@@ -1,9 +1,21 @@
 .Main {
   height: 688px;
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.Main::-webkit-scrollbar {
+      width: 0;
+      height: 0;
 }
 
 .Main__item {
+  width: 100%;
   height: 166px;
   margin: 8px 0;
+  padding: 4px;
+  border-radius: 7px;
+  box-sizing: border-box;
+  background: #f4f8ff;
 }

@@ -1,5 +1,6 @@
 import React, { ReactElement, useState, useEffect } from "react";
 import { MainProps, ApiObject } from "../../utils/types";
+import Item from "../Item/Item";
 import "./Main.css";
 
 function Main(props: MainProps): ReactElement {
@@ -25,7 +26,7 @@ function Main(props: MainProps): ReactElement {
     >
       {(props.data as ApiObject[]).map((i) => (
         <div key={i.id as string} className="Main__item">
-          <h2>{i.id}</h2>
+          <Item data={i} />
         </div>
       ))}
     </section>

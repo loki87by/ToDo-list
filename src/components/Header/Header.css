@@ -1,6 +1,6 @@
 .Header {
   height: 20px;
-  padding: 0px, 4px;
+  padding: 0px 4px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@
   font-weight: 600;
   line-height: 20px;
   letter-spacing: 0px;
-  color: #50b810;
+  color: var(--secondary-color);
 }
 
 .Header__items {
@@ -24,12 +24,18 @@
 .Header__items-button {
   width: 20px;
   height: 20px;
-  padding: 0;
+  padding: 4px;
+  border: none;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #d9d9d9;
-  font-size: 12px;
-  line-height: 0.99;
-  color: #3d8fec;
+}
+
+.Header__items-image {
+  width: 12px;
+  height: 12px;
 }
 
 .Header__items-text {
@@ -44,5 +50,5 @@
   font-weight: 600;
   line-height: 17px;
   letter-spacing: 0px;
-  color: #555555;
+  color: var(--neuteral-color);
 }

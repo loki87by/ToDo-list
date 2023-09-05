@@ -1,8 +1,16 @@
-import { ApiObject } from "./types";
+import { faker } from '@faker-js/faker';
+import { ApiObject, DateOptions } from "./types";
+
+const options: DateOptions = {
+  month: "short",
+  day: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+};
 
 export const dataUpdater = (data: ApiObject[]): ApiObject[] => {
   return data
-    .map((i /* , index */) => {
+    .map((i) => {
       const date = new Date();
       const string = date.toLocaleString().split(",")[0];
       const dateParts = string.split(".");
@@ -13,12 +21,25 @@ export const dataUpdater = (data: ApiObject[]): ApiObject[] => {
       );
       const endMinimum = Date.parse(startDate as unknown as string);
       const endDate = new Date(rand(100) * 24 * 60 * 60 * 1000 + endMinimum);
-      /* if (index < 5) {
-      console.log(endDate);
-    } */
+      const description = faker.lorem.text()
       i.startDate = startDate;
       i.endDate = endDate;
+      i.description = description
       return i;
     })
     .sort((a, b) => (a.startDate > b.startDate ? 1 : -1));
 };
+
+export const dateHandler = (date: Date): string => {
+  return date.toLocaleDateString("en-US", options);
+};
+
+export const capitalizer = (str: string): string => {
+  const words = str.split(' ')
+  const firstWord = words[0]
+  const letters = firstWord.split('')
+  const capitalizeFirst = letters[0].toUpperCase()
+  const newFirstWord = `${capitalizeFirst}${letters.slice(1).join('')}`
+  const total = `${newFirstWord}${words.slice(1).join(' ')}`
+  return total
+}
