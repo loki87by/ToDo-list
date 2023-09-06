@@ -5,6 +5,7 @@ import * as styles from "./Main.scss";
 
 function Main(props: MainProps): ReactElement {
   const [scrollTop, setScrollTop] = useState(0);
+  const [pageScrolled, setPageScrolled] = useState(false);
 
   useEffect(() => {
     const startDate =
@@ -17,10 +18,24 @@ function Main(props: MainProps): ReactElement {
     }
   });
 
+  useEffect(() => {
+    if (pageScrolled) {
+      console.log(pageScrolled);
+      const timer = setTimeout(() => {
+        setPageScrolled(false);
+      }, 1000);
+
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [pageScrolled]);
+
   return (
     <section
-      className={styles.main}
+      className={`${styles.main} ${pageScrolled && styles.mainScrolled}`}
       onScroll={(e) => {
+        setPageScrolled(true);
         setScrollTop(Math.floor((e.target as HTMLElement).scrollTop / 182));
       }}
     >

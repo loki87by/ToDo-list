@@ -1,3 +1,4 @@
+@import "../../_variables.scss";
 @import "../../_mixins.scss";
 
 .main {
@@ -9,6 +10,26 @@
 
 .main::-webkit-scrollbar {
   @include equilateral(0);
+}
+
+.mainScrolled {
+  scrollbar-width: thin;
+  scrollbar-color: $neuteral-color transparent;
+}
+
+.mainScrolled::-webkit-scrollbar {
+  width: 5px;
+  height: auto;
+}
+
+.mainScrolled::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mainScrolled::-webkit-scrollbar-thumb {
+  background-color: $neuteral-color;
+  border-radius: 2px;
+  border: 1px solid $main-color;
 }
 
 .item {

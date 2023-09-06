@@ -30,6 +30,7 @@ export const dataUpdater = (data: ApiObject[]): ApiObject[] => {
       i.startDate = startDate;
       i.endDate = endDate;
       i.description = description;
+
       return i;
     })
     .sort((a, b) => (a.startDate > b.startDate ? 1 : -1));
@@ -46,5 +47,6 @@ export const capitalizer = (str: string): string => {
   const capitalizeFirst = letters[0].toUpperCase();
   const newFirstWord = `${capitalizeFirst}${letters.slice(1).join("")}`;
   const total = `${newFirstWord}${words.slice(1).join(" ")}`;
+
   return total;
 };

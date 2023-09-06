@@ -39,7 +39,7 @@ function Content(props: BasicProps): ReactElement {
   }, [props.data, currentDate]);
 
   return (
-    <section className={ styles.content }>
+    <section className={styles.content}>
       <Header currentDay={currentDateStringify} items={currentDateItems} />
       <Main
         data={props.data}

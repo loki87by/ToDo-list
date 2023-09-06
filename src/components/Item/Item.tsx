@@ -6,13 +6,12 @@ import avatar from "../../assets/avatar.png";
 import * as styles from "./Item.scss";
 
 function Item(props: ItemProps): ReactElement {
-
   return (
     <section className={styles.item}>
       <article className={styles.title}>
         <input
           className={styles.titleCheckbox}
-          defaultChecked={(props.data.completed as boolean)}
+          defaultChecked={props.data.completed as boolean}
           id={`Item__${props.data.id}-checkbox`}
           name={`Item__${props.data.id}-checkbox`}
           disabled={true}
