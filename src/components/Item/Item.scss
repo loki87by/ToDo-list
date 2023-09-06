@@ -24,11 +24,12 @@
 
 .titleCheckbox + .titleText {
   @include user-select(none);
+  display: inline-block;
 }
 
 .titleCheckbox + .titleText::before {
   content: "";
-  display: inline-block;
+  float: left;
   @include equilateral(16px);
   padding: 2px 0px 0px 0px;
   margin-right: 8px;
@@ -50,7 +51,6 @@
 
 .titleText {
   display: -webkit-box;
-  display: box;
   @include lines(3);
   @include ellipsis(ellipsis);
   word-wrap: break-word;

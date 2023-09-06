@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement } from "react";
 import { ItemProps } from "../../utils/types";
 import { dateHandler, capitalizer } from "../../utils/helpers";
 import arrow from "../../assets/arrow.png";
@@ -6,20 +6,17 @@ import avatar from "../../assets/avatar.png";
 import * as styles from "./Item.scss";
 
 function Item(props: ItemProps): ReactElement {
-  const [checked, setChecked] = useState(props.data.completed as boolean);
 
   return (
     <section className={styles.item}>
       <article className={styles.title}>
         <input
           className={styles.titleCheckbox}
-          defaultChecked={checked}
+          defaultChecked={(props.data.completed as boolean)}
           id={`Item__${props.data.id}-checkbox`}
           name={`Item__${props.data.id}-checkbox`}
+          disabled={true}
           type="checkbox"
-          onChange={() => {
-            setChecked(!checked);
-          }}
         />
         <label
           className={styles.titleText}

@@ -20,7 +20,12 @@ export const dataUpdater = (data: ApiObject[]): ApiObject[] => {
         `${+dateParts[2]}, ${+dateParts[1]}, ${rand(4) + today}`
       );
       const endMinimum = Date.parse(startDate as unknown as string);
-      const endDate = new Date(rand(100) * 24 * 60 * 60 * 1000 + endMinimum);
+      const endDate = new Date(
+        rand(100) * 24 * 60 * 60 * 1000 +
+          rand(24) * 60 * 60 * 1000 +
+          rand(12) * 5 * 60 * 1000 +
+          endMinimum
+      );
       const description = faker.lorem.text();
       i.startDate = startDate;
       i.endDate = endDate;
