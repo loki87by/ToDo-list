@@ -14,7 +14,7 @@ const config: webpack.Configuration = {
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "[name].[contenthash].js",
-    publicPath: "https://loki87by.github.io/*repo*/",
+    publicPath: "https://loki87by.github.io/ToDo-list/",
     library: "MyApp",
     libraryTarget: "umd",
     umdNamedDefine: true,

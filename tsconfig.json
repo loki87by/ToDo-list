@@ -12,6 +12,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
+    "types": [ "node" ],
     "outDir": "./build/",
   },
   "include": ["src", "custom.d.ts"]

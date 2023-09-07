@@ -20,7 +20,6 @@ function Main(props: MainProps): ReactElement {
 
   useEffect(() => {
     if (pageScrolled) {
-      console.log(pageScrolled);
       const timer = setTimeout(() => {
         setPageScrolled(false);
       }, 1000);
