@@ -108,4 +108,4 @@
 
 ## Спасибо, за внимание
 
-[© Алексей dqкулич](https://github.com/loki87by)
+[© Алексей Акулич](https://github.com/loki87by)
